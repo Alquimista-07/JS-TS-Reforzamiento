@@ -169,3 +169,30 @@ do {
 console.log('Ya no hay gasolina');
 
 console.log('----------------------------------------------------------------------');
+
+//--------------------------------------------------------------------------
+//                        CICLOS - FOR
+//--------------------------------------------------------------------------
+
+export let limite = 50;
+
+// Nota: El tercer argumento del for es opcional y por lo tanto lo podríamos manejar dentro del cuerpo del ciclo,
+//       pero generalmente se usa como el tercer argumento para incrementar la variable de control
+for( let i = 0; i <= limite; i++ ){
+    
+    if(i === 5){
+        continue;
+    }
+    
+    console.log('Valor de i: ', i);
+    
+    if(i === 5){
+        break;
+    }
+
+}
+
+console.log('Fin de programa');
+
+console.log('----------------------------------------------------------------------');
+
