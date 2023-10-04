@@ -35,9 +35,10 @@ console.log('hasKids', hasKids);
 //--------------------------------------------------------------------------
 //                        CONTROL STRUCTURES
 //--------------------------------------------------------------------------
+//IF
 console.log('Inicio de programa');
 
-let isTired: boolean = !true;
+export let isTired: boolean = !true;
 
 if ( isTired ) {
     console.log('Tomar Café');
@@ -45,7 +46,15 @@ if ( isTired ) {
     console.log('Tomar Aguar');
 }
 
-
-
-
 console.log('Fin de programa');
+
+// IF - ELSE Anidados
+export let grade: number = 90;
+
+if( grade >= 60 ){
+    console.log('El alumno aprueba la clase');
+} else if( grade > 50 ){
+        console.log('Por favor estudie más');
+}else {
+    console.log('El alumno NO aprueba la clase');
+}
