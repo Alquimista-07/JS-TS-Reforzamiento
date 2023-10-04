@@ -95,3 +95,48 @@ console.log('La nota del alumno es: ', gradeLetter);
 console.log('Fin de programa');
 
 console.log('----------------------------------------------------------------------');
+
+//--------------------------------------------------------------------------
+//                        SWITCH
+//--------------------------------------------------------------------------
+
+let weekDay: number = 3; // 1 = Lunes, 2 = Martes, 3 = Miércoles, ...
+
+if( weekDay <= 0 ){
+    // Lanzamos una excepción para terminar la ejecución del programa
+    throw new Error('Día de la semana no permitido');
+}
+
+switch ( weekDay ) {
+
+    case 1:
+        console.log('El día es: Lunes');
+        break;
+        
+    case 2:
+        console.log('El día es: Martes');
+        break;
+            
+    case 3:
+        console.log('El día es: Miércoles');
+        break;
+                
+    case 4:
+        console.log('El día es: Jueves');
+        break;
+        
+    case 5:
+        console.log('El día es: Viernes');
+        break;
+
+    case 6:
+        console.log('El día es: Sábado');
+        break;
+                
+    default:
+        console.log('El día es: Domingo');
+        break;
+    
+    }
+
+console.log('----------------------------------------------------------------------');
