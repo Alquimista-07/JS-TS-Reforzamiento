@@ -31,3 +31,18 @@ console.log('Línea #', numberOfLines2);
 
 increaseLineNumber();
 console.log('Línea #', numberOfLines2);
+console.log('----------------------------------------');
+
+// Ejercicio #3
+let numberOfLines3 = 0;
+
+function printLineNumber() {
+    numberOfLines3++;
+    console.log('Línea #', numberOfLines3);
+}
+
+printLineNumber();
+printLineNumber();
+printLineNumber();
+printLineNumber();
+printLineNumber();
