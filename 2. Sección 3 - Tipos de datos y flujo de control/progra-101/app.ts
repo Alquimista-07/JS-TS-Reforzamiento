@@ -143,12 +143,28 @@ console.log('-------------------------------------------------------------------
 //--------------------------------------------------------------------------
 //                        CICLOS - WHILE
 //--------------------------------------------------------------------------
-let gasTank = 50;
+export let gasTank = 50;
 
 while( gasTank > 0) {
     console.log('Gasolina restante: ', gasTank);
     gasTank--;
 }
+
+console.log('Ya no hay gasolina');
+
+console.log('----------------------------------------------------------------------');
+
+//--------------------------------------------------------------------------
+//                        CICLOS - DO WHILE
+//--------------------------------------------------------------------------
+export let gasTank2 = 0;
+
+do {
+
+    console.log('Gasolina restante: ', gasTank2);
+    gasTank2--;
+
+} while( gasTank2 > 0);
 
 console.log('Ya no hay gasolina');
 
