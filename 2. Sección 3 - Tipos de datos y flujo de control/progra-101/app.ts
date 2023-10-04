@@ -100,7 +100,7 @@ console.log('-------------------------------------------------------------------
 //                        SWITCH
 //--------------------------------------------------------------------------
 
-let weekDay: number = 3; // 1 = Lunes, 2 = Martes, 3 = Miércoles, ...
+export let weekDay: number = 3; // 1 = Lunes, 2 = Martes, 3 = Miércoles, ...
 
 if( weekDay <= 0 ){
     // Lanzamos una excepción para terminar la ejecución del programa
