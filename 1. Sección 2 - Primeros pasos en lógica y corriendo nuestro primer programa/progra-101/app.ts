@@ -36,7 +36,7 @@ console.log('----------------------------------------');
 // Ejercicio #3
 let numberOfLines3 = 0;
 
-function printLineNumber() {
+export function printLineNumber() {
     numberOfLines3++;
     console.log('Línea #', numberOfLines3);
 }
