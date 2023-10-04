@@ -31,3 +31,21 @@ let hasKids: boolean = true;
 console.log('isActive', isActive);
 console.log('isRunning', isRunning);
 console.log('hasKids', hasKids);
+
+//--------------------------------------------------------------------------
+//                        CONTROL STRUCTURES
+//--------------------------------------------------------------------------
+console.log('Inicio de programa');
+
+let isTired: boolean = !true;
+
+if ( isTired ) {
+    console.log('Tomar Café');
+} else {
+    console.log('Tomar Aguar');
+}
+
+
+
+
+console.log('Fin de programa');
