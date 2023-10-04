@@ -196,3 +196,49 @@ console.log('Fin de programa');
 
 console.log('----------------------------------------------------------------------');
 
+//--------------------------------------------------------------------------
+//                        TAREA CICLOS
+//--------------------------------------------------------------------------
+
+// Primera forma
+export let base1 = 10;
+let limit1 = 50;
+let aux = 0;
+
+console.log('Inicio Programa - While');
+while ( aux <= limit1 ) {
+    let resultado = base1 * aux;
+    console.log(base1 + ' X ' + aux  + ' = ', resultado );
+    aux++;
+}
+console.log('Fin Programa - While');
+
+console.log('----------------------------------------------------------------------');
+// Segunda forma
+export let base2 = 10;
+let limit2 = 50;
+
+console.log('Inicio Programa - For');
+for (let i = 0; i <= limit2; i++) {
+    console.log(base2 + ' X ' + i  + ' = ', base2 * i);
+}
+console.log('Fin Programa - For');
+
+console.log('----------------------------------------------------------------------');
+
+// Tercera forma
+export let aux2 = 0;
+let base3 = 10;
+let limit3 = 50;
+
+console.log('Inicio Programa - do while');
+do{
+
+    let res = base3 * aux2;
+    console.log(base3 + ' X ' + aux2  + ' = ', res );
+    aux2++;
+
+} while( aux2 <= limit3 )
+console.log('Fin Programa - do while');
+
+console.log('----------------------------------------------------------------------');
