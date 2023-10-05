@@ -25,6 +25,9 @@ function addTwoNumbers( num1: number, num2: number ): number {
  console.log('Total: ' + total);
 
  console.log('--------------------------------------------------------------------');
+ //--------------------------------------------------------------------------
+//              IMPORTACIÓN - EXPORTACION FUNCIONES (Concepto Módulos)
+//---------------------------------------------------------------------------
 
  import { addTwoNumbers2, substractTowNumbers, timesTwoNumbers, divideTwoNumbers2 } from './helpers/math-helpers';
 
@@ -43,3 +46,12 @@ let numb2: number = 20;
 
  console.log('--------------------------------------------------------------------');
 
+//--------------------------------------------------------------------------
+//                        TAREA: TABLA DE MULTIPLICAR
+//--------------------------------------------------------------------------
+import { printMultiplicationTable } from './helpers/print-multiplication-table';
+
+printMultiplicationTable(10);
+printMultiplicationTable(10, 20);
+
+console.log('--------------------------------------------------------------------');
