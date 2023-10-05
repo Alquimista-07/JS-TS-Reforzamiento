@@ -128,12 +128,12 @@ class Car {
     // El consturctor no es más que una función pero como está dentro de una clase o dentro de un objeto se conoce es como 
     // un método. Este constructor es lo que se va a ejecutar primero cuando creamos una instancia de la case y lo podemos
     // usar para inicializar lo que queramos.
-    constructor() {
-        this.brand = 'Sin marca';
+    constructor( brand: string, type: string ) {
+        this.brand = brand;
         this.doors = 0;
         this.fullTank = 0;
         this.isRunning = false;
-        this.type = 'Sin tipo';
+        this.type = type;
         this.createdAt = 453456454;
     }
 
@@ -185,7 +185,7 @@ class Car {
 // las interfaces no sirven para crear nuevas instancias sino que la interface sirve para definir como
 // va a lucir un objeto
 
-let myMazda = new Car();
+let myMazda = new Car( 'Mazda', 'Sedan' );
 
 console.log(myMazda);
 
