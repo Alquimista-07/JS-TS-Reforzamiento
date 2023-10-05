@@ -158,6 +158,25 @@ class Car {
 
     }
 
+    // ---------------------------------------
+    //    TAREA: Método para llenar el tanque
+    // ---------------------------------------
+    fillTank( gas: number ){
+
+        if( gas <= 0 ){
+            console.log('El gas debe ser positivo');
+            return;
+        }
+
+        let fullTankNew = this.fullTank + gas;
+
+        if( fullTankNew >= 100  ) {
+           fullTankNew = 100;
+        }
+        
+        this.fullTank = fullTankNew;
+
+    }
 
 }
 
@@ -179,5 +198,9 @@ console.log('-------------------------------------------------------------------
 myMazda.turnOn();
 myMazda.turnOn();
 console.log(myMazda);
+console.log('--------------------------------------------------------------------------');
+
+myMazda.fillTank(50);
+myMazda.turnOn();
 
 console.log('--------------------------------------------------------------------------');
