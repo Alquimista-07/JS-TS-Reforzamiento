@@ -55,3 +55,28 @@ printMultiplicationTable(10);
 printMultiplicationTable(10, 20);
 
 console.log('--------------------------------------------------------------------');
+
+//--------------------------------------------------------------------------
+//                                   ARREGLOS
+//--------------------------------------------------------------------------
+ let people: string[] = ['Fernando', 'Melissa', 'Eduardo'];
+ let flowers: string[] = ['Rosa', 'Girasol', 'Pensamiento', 'Lirio',  'Crisantemo'];
+
+for( let flor of flowers ){
+    console.log(flor);
+}
+
+console.log('--------------------------------------------------------------------');
+
+flowers.forEach(flor => {
+    console.log(flor);
+});
+
+console.log('--------------------------------------------------------------------');
+
+
+ for(let i = 0; i < flowers.length; i++){
+    console.log(flowers[i]);
+ }
+
+ console.log('--------------------------------------------------------------------');
