@@ -31,3 +31,40 @@ console.log( person.name.length );
 person.toString();
 
 console.log('--------------------------------------------------------------------------');
+
+//--------------------------------------------------------------------------
+//                     EJERCICIO PRÁCTICO OBJETOS LITERARLES
+//--------------------------------------------------------------------------
+let car = {
+    doors: 5,
+    model: 2022,
+    brand: 'Mitsubishi',
+    color: 'Negro',
+    motor: 'Híbrido',
+    gearbox: 'Manual'
+}
+
+let smartTv = {
+    sizeInches: 108,
+    screen: 'LCD',
+    year: 2023,
+    color: 'Negro',
+    available: true,
+    stock: 100,
+    brand: 'Xiaomi'
+}
+
+let youtubeVideo = {
+    lenght: 4650,
+    author: 'Fernando Herrera',
+    format: 'mp4',
+    comments: ['Buen video', 'Me gusta'],
+    likes: 465,
+    dislikes: 20
+}
+
+console.log(car);
+console.log(smartTv);
+console.log(youtubeVideo);
+
+console.log('--------------------------------------------------------------------------');
