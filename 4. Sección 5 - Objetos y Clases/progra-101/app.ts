@@ -68,3 +68,39 @@ console.log(smartTv);
 console.log(youtubeVideo);
 
 console.log('--------------------------------------------------------------------------');
+
+//--------------------------------------------------------------------------
+//                    ARREGLOS DE OBJETOS
+//--------------------------------------------------------------------------
+interface Person {
+    name: string;
+    age: number,
+    isActive: boolean
+}
+
+let fernando: Person = {
+    age: 36,
+    isActive: true,
+    name: 'Fernando'
+};
+
+let melissa: Person = {
+    age: 30,
+    name: 'Melissa',
+    isActive: true
+};
+
+let andres: Person = {
+    name: 'Andres',
+    age: 42,
+    isActive: false
+};
+
+let people: Person[] = [ fernando, melissa, andres ];
+
+for (let i = 0; i < people.length; i++) {
+    let person = people[i];
+    console.log(person.name + ' ' + person.age);
+}
+
+console.log('--------------------------------------------------------------------------');
