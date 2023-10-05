@@ -125,18 +125,37 @@ class Car {
     type: string;
     createdAt: number;
     
-    // Los métodos son funciones relacionadas a la clase. Y cualquier variable que sea una instacia de la clase, tendrá esas funciones.
-
     // El consturctor no es más que una función pero como está dentro de una clase o dentro de un objeto se conoce es como 
     // un método. Este constructor es lo que se va a ejecutar primero cuando creamos una instancia de la case y lo podemos
     // usar para inicializar lo que queramos.
     constructor() {
         this.brand = 'Sin marca';
         this.doors = 0;
-        this.fullTank = 100;
+        this.fullTank = 0;
         this.isRunning = false;
         this.type = 'Sin tipo';
         this.createdAt = 453456454;
+    }
+
+    //------------------------------------------
+    // Métodos de una clase
+    //------------------------------------------
+    // Los métodos son funciones relacionadas a la clase. Y cualquier variable que sea una instacia de la clase, tendrá esas funciones.
+    turnOn() {
+
+        if( this.isRunning ) {
+            console.log('El carro ya estaba encendido... Se daño el motor');
+            return;
+        }
+
+        if( this.fullTank <= 0 ){
+            console.log('El carro no tiene gasolina');
+            return;
+        }
+        
+        this.isRunning = true;
+        console.log('El carro esta encendido');
+
     }
 
 
@@ -151,6 +170,14 @@ let myMazda = new Car();
 
 console.log(myMazda);
 
+console.log('--------------------------------------------------------------------------');
+
 console.log(myMazda.brand);
+
+console.log('--------------------------------------------------------------------------');
+
+myMazda.turnOn();
+myMazda.turnOn();
+console.log(myMazda);
 
 console.log('--------------------------------------------------------------------------');
