@@ -117,13 +117,27 @@ console.log('-------------------------------------------------------------------
 // obviamente sirve para eso y con el cual pod3emos crear no solo una sino muchas.
 class Car {
 
+    // El nivel de acceso static. Los métodos y propiedades que tengan este static vana poder ser accedidas de forma global
+    // Por lo tanto si usamos el nombre de la clase y le damos un punto vemos que podemos acceder a esta propiedad 
+    // className y esto lo demostramos más abajo a través de un console.log(Car.className). OJO por lo tanto para accederlos
+    // siempre tenemos que llamar la clase
+    // Y esto nos puede servir por si acaso queremos establecer que el nombre de la clase para referencias o algún tipo de valor
+    // que queramos que se mantenga a lo largo de toda la aplicación. Aunque estos son casos bien específicos en los cualse vamos 
+    // a usar métodos y propiedades estáticas. OJO y recordemos
+    static className = 'Car';
+
     // Propieades o atributos de la clase
-    brand: string;
-    doors: number;
-    fullTank: number;
-    isRunning: boolean;
-    type: string;
-    createdAt: number;
+    // El nivel de acceso readonly especifica que no se puede modificar una vez se crea por lo tanto si intentamos alterarla indicamdo por ejemplo
+    // this.brand = 'Honda'; esto va a dar error ya que el readonly no lo permite, adicionalmente nos podemos dar cuenta que cuando esta asignación 
+    // si la podemos hacer por constructor cuando creamos una nueva instancia, es decir, esta propiedad la vamos a poder modificar solo a través del
+    // constructor pero no fuera de este sin importar sí nos encotremos dentro de la misma clase no la vamos a poder modificar.
+    public readonly brand: string;
+    public doors: number;
+    public fullTank: number;
+    public isRunning: boolean;
+    public readonly type: string;
+
+    private readonly createdAt: number;
     
     // El consturctor no es más que una función pero como está dentro de una clase o dentro de un objeto se conoce es como 
     // un método. Este constructor es lo que se va a ejecutar primero cuando creamos una instancia de la case y lo podemos
@@ -202,5 +216,24 @@ console.log('-------------------------------------------------------------------
 
 myMazda.fillTank(50);
 myMazda.turnOn();
+
+console.log('--------------------------------------------------------------------------');
+// Vuando los atributos son publicos podemos acceder a ellos desde fuera de la clase incluso
+// si son readnly pero como se mencionó antes solo podemos acceder a ellos más no modificarlos
+// una vez se han establecido al instanciar la clase. Por lo tanto fuera del constructor no 
+// vamos a poder modificarlo incluso si estamos dentro de la misma clase.
+console.log( myMazda.type );
+
+// Adicionalmete podemos hacer que los atributos de la case no sean visibles en el exterior
+// y por consecuencia solo se pueden usar, llamar y modificar dentro de la misma clase en la 
+// cual fueron definidos por ejemplo en el caso de createdAt que si intentamos imprimirla en
+// un console.log nos va a dar error ya que no es accesible ya que es privada.
+
+//console.log(myMazda.createdAt);
+
+// Por lo tanto si queremos modificar en este caso el createdAt tendríamos que crear un método
+// dentor de la clase que al llamarlo modifique el valor de createdAt
+
+console.log(Car.className)
 
 console.log('--------------------------------------------------------------------------');
