@@ -25,4 +25,21 @@ function addTwoNumbers( num1: number, num2: number ): number {
  console.log('Total: ' + total);
 
  console.log('--------------------------------------------------------------------');
- 
+
+ import { addTwoNumbers2, substractTowNumbers, timesTwoNumbers, divideTwoNumbers2 } from './helpers/math-helpers';
+
+let numb1: number = 10;
+let numb2: number = 20;
+
+ let total1: number = addTwoNumbers2(numb1, numb2);
+ let total2: number = substractTowNumbers(numb1, numb2);
+ let total3: number = timesTwoNumbers(numb1, numb2);
+ let total4: number = divideTwoNumbers2(numb1, numb2);
+
+ console.log( 'Add: ' + total1 );
+ console.log( 'Substract: ' + total2 );
+ console.log( 'Multipy: ' + total3 );
+ console.log( 'Divide: ' + total4 );
+
+ console.log('--------------------------------------------------------------------');
+
