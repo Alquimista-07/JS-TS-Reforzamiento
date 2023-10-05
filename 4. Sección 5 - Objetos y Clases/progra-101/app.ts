@@ -104,3 +104,53 @@ for (let i = 0; i < people.length; i++) {
 }
 
 console.log('--------------------------------------------------------------------------');
+
+//--------------------------------------------------------------------------
+//               CLASES (Programación Orientada a Objetos - POO)
+//--------------------------------------------------------------------------
+// NOTA: La programación orientada a objetos es la programación en la cual nosotros
+//       estamos tratando de trabajar basado en clases y nuestras clases son abstraciones
+//       de "objetos que existen en la vida real"
+
+// Al igual que los objetos, pueden ser representaciones abstractas de cosas.
+// Y una analogía sería que una clase es como un molde para hacer galletas el cual
+// obviamente sirve para eso y con el cual pod3emos crear no solo una sino muchas.
+class Car {
+
+    // Propieades o atributos de la clase
+    brand: string;
+    doors: number;
+    fullTank: number;
+    isRunning: boolean;
+    type: string;
+    createdAt: number;
+    
+    // Los métodos son funciones relacionadas a la clase. Y cualquier variable que sea una instacia de la clase, tendrá esas funciones.
+
+    // El consturctor no es más que una función pero como está dentro de una clase o dentro de un objeto se conoce es como 
+    // un método. Este constructor es lo que se va a ejecutar primero cuando creamos una instancia de la case y lo podemos
+    // usar para inicializar lo que queramos.
+    constructor() {
+        this.brand = 'Sin marca';
+        this.doors = 0;
+        this.fullTank = 100;
+        this.isRunning = false;
+        this.type = 'Sin tipo';
+        this.createdAt = 453456454;
+    }
+
+
+}
+
+// Creamos una nueva instancia de la clase por consecuencia estamos definiendo todas las propiedades
+// y métodos de la clase instantaneamente y esto es una diferencia con las interfaces ya que no podemos
+// las interfaces no sirven para crear nuevas instancias sino que la interface sirve para definir como
+// va a lucir un objeto
+
+let myMazda = new Car();
+
+console.log(myMazda);
+
+console.log(myMazda.brand);
+
+console.log('--------------------------------------------------------------------------');
