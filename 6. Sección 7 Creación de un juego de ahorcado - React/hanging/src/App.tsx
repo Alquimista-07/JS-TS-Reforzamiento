@@ -27,11 +27,22 @@ function App() {
   const [ intento, setIntento ] = useState(0);
 
   const checkLetter = ( letter: string ) => {
-    // Suponiendo que la letra es errada y usamos la función del useState para actualizar el estado.
-    // Adicionalmente con la ayuda de la función min mantenemos el valor mínimo para que cuando los
-    // intentos supere el valor mínimo establecido que es 9 lo siga manteniendo y el contador de
-    // intentos no suba de 9
-    setIntento( Math.min( intento + 1, 9 ) );
+
+    // Validamos si la letra que se esta enviando no existe en la palabra para llamar la actualización
+    // del estado de los intentos.
+   if(  !word.includes(letter) ) {
+    
+      // Manejamos la letra es errada y correcta usando la función del useState para actualizar el estado
+      // y poder ir actualiznado los intentos.
+      // Adicionalmente con la ayuda de la función min mantenemos el valor mínimo para que cuando los
+      // intentos supere el valor mínimo establecido que es 9 lo siga manteniendo y el contador de
+      // intentos no suba de 9
+      setIntento( Math.min( intento + 1, 9 ) );
+
+      return;
+
+    }
+
   }
 
   return (
