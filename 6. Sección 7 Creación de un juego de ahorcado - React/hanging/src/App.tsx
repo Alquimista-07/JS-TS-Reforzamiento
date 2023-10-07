@@ -14,7 +14,7 @@ function App() {
   // del hook con su correspondiente estado inicial con el fin de irlo actualizando y que dichos cambios
   // se vean reflejados en la interfaz cuando una letra es correcta o incorrecta.
   const [ word ] = useState( 'COMPUTADORA' );
-  const [ hiddenWord ] = useState( '_ '.repeat( word.length ) );
+  const [ hiddenWord, setHiddenWord ] = useState( '_ '.repeat( word.length ) );
 
   // NOTA: Para manejar los intentos e ir cambiandolos necesitamos manejar el estado en React.
   //       Y el estado no es más que como se encuentra el valor de alguna variable y con esa
@@ -42,6 +42,21 @@ function App() {
       return;
 
     }
+
+    // Si no hace el return yo se que existe la letra ya que no entro al if, por lo tanto recorremos
+    // el arreglo para ir asignando la letra correcta en su posición correspondiente
+    const hiddenWordArray = hiddenWord.split(' '); // Dividimos el arreglo por los espacios para obtener un arreglo de guiones bajos
+    //console.log(hiddenWordArray);
+
+    for (let i = 0; i < word.length; i++) {
+      if( word[i] === letter ) {
+        hiddenWordArray[i] = letter;
+      }      
+    }
+
+    // Establecemos el nuevo estado del hiddenWord.
+    // Y hacemos el opuesto al split (join)
+    setHiddenWord( hiddenWordArray.join(' ') );
 
   }
 
