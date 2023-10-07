@@ -16,7 +16,7 @@ function App() {
   // Manejo de la palabra. Adicionalmente hacemos el manejo de la palabra y la palabra oculta a través
   // del hook con su correspondiente estado inicial con el fin de irlo actualizando y que dichos cambios
   // se vean reflejados en la interfaz cuando una letra es correcta o incorrecta.
-  const [ word ] = useState( getRandomWord() );
+  const [ word, setWord ] = useState( getRandomWord() );
   const [ hiddenWord, setHiddenWord ] = useState( '_ '.repeat( word.length ) );
 
   // NOTA: Para manejar los intentos e ir cambiandolos necesitamos manejar el estado en React.
@@ -109,6 +109,20 @@ function App() {
 
   }
 
+  // Método para reiniciar el juego al presionar el botón
+  const newGame = () => {
+
+    const newWord = getRandomWord();
+
+    // Establecemos y reestablecemos los estados
+    setWord( newWord );
+    setHiddenWord( '_ '.repeat( newWord.length ) );
+    
+    setIntento( 0 );
+    setLose( false );
+    setWon( false );
+  }
+
   return (
     <div className="App">
       {/* Imágenes */}
@@ -144,6 +158,15 @@ function App() {
           </button>
         ))
       }
+
+      <br /><br />
+      {/* Como la función para reiniciar el juego no necesita ni envía ningún argumento no es necesario pasarlo como una función flecha a diferencia de cuando llamamos la función en los botones para las letras
+          por lo tanto simplemente la llamamos */}
+      <button 
+        onClick={ newGame }>
+          ¿Nuevo Juego?
+      </button>
+
     </div>
   );
 }
