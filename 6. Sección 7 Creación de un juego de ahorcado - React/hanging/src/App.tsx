@@ -10,6 +10,12 @@ import "./App.css";
 
 function App() {
 
+  // Manejo de la palabra. Adicionalmente hacemos el manejo de la palabra y la palabra oculta a través
+  // del hook con su correspondiente estado inicial con el fin de irlo actualizando y que dichos cambios
+  // se vean reflejados en la interfaz cuando una letra es correcta o incorrecta.
+  const [ word ] = useState( 'COMPUTADORA' );
+  const [ hiddenWord ] = useState( '_ '.repeat( word.length ) );
+
   // NOTA: Para manejar los intentos e ir cambiandolos necesitamos manejar el estado en React.
   //       Y el estado no es más que como se encuentra el valor de alguna variable y con esa
   //       variable adicionalmente queremos mostrar algo en el html. Para manejar el estado en 
@@ -35,7 +41,7 @@ function App() {
       <HangImage imageNumber={ intento } />
 
       {/* Palabra oculta */}
-      <h3>_ _ _ _ _ _ _ _ _ _</h3>
+      <h3>{ hiddenWord }</h3>
 
       {/* Contador de intentos */}
       <h3>Intentos: { intento }</h3>
