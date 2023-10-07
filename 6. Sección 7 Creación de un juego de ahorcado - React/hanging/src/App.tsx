@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // Importamos el arreglo de letras
 import { letters } from './helpers/letters';
@@ -26,7 +26,52 @@ function App() {
   //       como un argumento.
   const [ intento, setIntento ] = useState(0);
 
+  // Manejamos un nuevo estado para saber si perdió
+  const [ lose, setLose ] = useState( false ); // Se iniciliza en false ya que cuando inicia el juego aún no ha perdido
+  
+  // Manejamos un nuevo estado para saber si ganó
+  const [ won, setWon ] = useState( false ); // Se iniciliza en false ya que cuando inicia el juego aún no ha ganado
+  
+
+  // Determinar si la persona perdió
+  // React tiene algo genial que se le conoce como un efecto y que se maneja a través de un hook propio de React. Y un efecto
+  // nos permite disparar acciones cuando algo sucede, o estar pendientes de algo y cuando ese algo se cumpla o cuando ese algo
+  // cambie, reaccionar con ello.
+
+  // NOTA: En React se recomienda que se tengan efectos (useEffect) con tareas específicas
+
+  // EL useEffect tiene internamente una función que vamos a ejecutar cada vez que algo suceda, y para ello estamos pendiente de 
+  // la variable de los intentos la cual la indicamos entre []
+ useEffect( () => {
+
+  if( intento >= 9 ){
+    // Perdió
+    setLose( true );
+  }
+
+ }, [ intento ]);
+
+ // Determinar si la persiona ganó
+ useEffect(() => {
+
+  // console.log(hiddenWord); //_ _ _ _ _ _ _ _ _
+  const currentHiddenWord = hiddenWord.split(' ').join(''); // Manejo para quitar los espacios
+  //console.log(currentHiddenWord);
+
+  if( currentHiddenWord === word ) {
+    setWon( true );
+  }
+
+
+ }, [ hiddenWord ]);
+
+
   const checkLetter = ( letter: string ) => {
+
+    // Preguntamos si el lose esta en true para hacer un retorno y evitar que continue 
+    // ejecutando el demás código ya que al estar en true indica que perdió y el juego
+    // terminó
+    if( lose ) return;
 
     // Validamos si la letra que se esta enviando no existe en la palabra para llamar la actualización
     // del estado de los intentos.
@@ -71,6 +116,19 @@ function App() {
 
       {/* Contador de intentos */}
       <h3>Intentos: { intento }</h3>
+
+      {/* Mensaje si perdió */}
+      {
+        ( lose ) 
+        ? <h2>Perdió. { word }</h2> 
+        : ''
+      }
+      {/* Mensaje si ganoó */}
+      {
+        ( won ) 
+        ? <h2>Felicidades. Ha gando el juego!</h2> 
+        : ''
+      }
       
       {/* Botones de letras */}
       {
