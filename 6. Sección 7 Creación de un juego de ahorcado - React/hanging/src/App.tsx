@@ -6,6 +6,9 @@ import { letters } from './helpers/letters';
 // Importación Componentes
 import { HangImage } from './components/HangImage';
 
+// Importación de la función que genera las palabra aleatoriamente
+import { getRandomWord } from './helpers/getRandomWord';
+
 import "./App.css";
 
 function App() {
@@ -13,7 +16,7 @@ function App() {
   // Manejo de la palabra. Adicionalmente hacemos el manejo de la palabra y la palabra oculta a través
   // del hook con su correspondiente estado inicial con el fin de irlo actualizando y que dichos cambios
   // se vean reflejados en la interfaz cuando una letra es correcta o incorrecta.
-  const [ word ] = useState( 'COMPUTADORA' );
+  const [ word ] = useState( getRandomWord() );
   const [ hiddenWord, setHiddenWord ] = useState( '_ '.repeat( word.length ) );
 
   // NOTA: Para manejar los intentos e ir cambiandolos necesitamos manejar el estado en React.
@@ -70,8 +73,9 @@ function App() {
 
     // Preguntamos si el lose esta en true para hacer un retorno y evitar que continue 
     // ejecutando el demás código ya que al estar en true indica que perdió y el juego
-    // terminó
+    // terminó. Adicionalmente hacemos lo mismo si gano.
     if( lose ) return;
+    if( won ) return;
 
     // Validamos si la letra que se esta enviando no existe en la palabra para llamar la actualización
     // del estado de los intentos.
